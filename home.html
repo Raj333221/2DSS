@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System</title>
+    <style>
+        body{margin:0;height:100vh;display: flex;align-items: center;justify-content: center;background-color: black;overflow: auto;}
+        .container{font-size:10px;width:100em;height:100em;position: relative;}
+
+        .sun{position: absolute;top:50em;left:50em;width:5em;height:5em;background-color: yellow;box-shadow: 0 0 3em white;border-radius: 50%;}
+
+        .mercury{position:absolute;border-style:dotted;border-radius:50%;border-width: 0.1em 0.1em 0.1em 0;border-color: yellowgreen transparent transparent transparent;}/*orb_pos*/
+        .mercury{top:45em;bottom:45em;left:45em;right:45em;width:17.5em;height:17.5em;animation: orbit 16.5s linear infinite;}/*rev_path/accretion*/
+        .mercury::before{content:'';position:absolute;border-radius: 50%;}
+        .mercury::before{top:2em;right:1.75em;width:1em;height:1em;background-color: yellowgreen;box-shadow: 0 0 0.5em yellowgreen;}/*transit*/
+
+        .venus{position:absolute;border-style:dotted;border-radius:50%;border-width: 0.1em 0.1em 0 0;border-color: yellow transparent transparent transparent;}/*orb_pos*/
+        .venus{top:40em;left:40em;width:27.5em;height:27.5em;animation: orbit 26.5s linear infinite;}/*rev_path/accretion disk*/
+        .venus::before{content:'';position:absolute;border-radius: 50%;}
+        .venus::before{top:2.5em;right:3.5em;width:2em;height:2em;background-color: yellow;box-shadow: 0 0 0.5em yellow;}/*transit*/
+
+        .earth,.moon{position: absolute;border-style:dotted;border-color: aliceblue transparent transparent transparent;border-width: 0.1em 0.1em 0.1em 0;border-radius: 50%;}/*rev_path/accretion disk*/
+        .earth{top:30em;left:30em;width:45em;height:45em;animation: orbit 36.5s linear infinite;}/*orb_path*/
+        .moon{top:3.5em;right:0.75em;width: 8em;height: 8em;animation: orbit 2.7s linear infinite;}/*orb_path*/
+        .earth::before,
+        .moon::before{content:'';position:absolute;border-radius:50%;}/*init_pos*/
+        .earth::before{top:6.75em;right:3.5em;width:3em;height:3em;background-color: aqua;box-shadow: 0 0 1em aqua;}/*comp_pos*/
+        .moon::before{top:0.8em;right:0.2em;width:1.2em;height:1.2em;background-color: silver;box-shadow: 0 0 0.5em silver;}/*comp_pos*/
+
+        .mars,.phobos,.sec{position: absolute;border-style:dotted;border-color: red transparent transparent transparent;border-width: 0.1em 0.1em 0 0;border-radius: 50%;}/*rev_path/accretion disk*/
+        .mars{top:25em;left:22.5em;width:60em;height:60em;animation: orbit 46.5s linear infinite;}/*orb_path*/
+        .phobos{top:7.5em;right:3em;width: 8em;height: 8em;animation: orbit 2.9s linear infinite;}/*orb_path*/
+        .sec{top:2.75em;right:1.75em;width: 10em;height: 10em;animation: orbit 3.5s linear infinite;}
+        .mars::before,
+        .phobos::before,
+        .sec::before{content:'';position:absolute;border-radius:50%;}/*init_pos*/
+        .mars::before{top:9.75em;right:5.25em;width:2.8em;height:2.8em;background-color: red;box-shadow: 0 0 1em red;}/*comp_pos*/
+        .phobos::before{top:0.8em;right:0.2em;width:1.2em;height:1.2em;background-color:darkgoldenrod;box-shadow: 0 0 0.5em darkgoldenrod;}/*comp_pos*/
+        .sec::before{top:0.8em;right:0.2em;width:1.2em;height:1.2em;background-color:skyblue;box-shadow: 0 0 0.5em skyblue;}
+
+        @keyframes orbit {
+            to { transform: rotate(360deg);}
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sun">
+        </div>
+        <div class="mercury">
+        </div>
+        <div class="venus">
+        </div>
+        <div class="earth">
+            <div class="moon">
+            </div>
+        </div>
+        <div class="mars">
+            <div class="phobos">
+            </div>
+            <div class="sec">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
